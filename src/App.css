@@ -1,0 +1,81 @@
+.but2{
+     border:.5px solid black;
+ 
+min-width: 144px;
+padding: 3px 5px;
+align-self: center;
+ margin: 0 12px;
+}
+.but3{
+    border:.5px solid black;
+background-color: rgb(161, 160, 160);
+min-width: 57px;
+padding: 3px 5px;
+align-self: center;
+ }
+.but1{
+    border:.5px solid black;
+background-color: rgb(172, 169, 169);
+min-width: 35px;
+padding: 3px 5px;
+align-self: center;
+margin: 0 12px;
+}.but4{
+    border:.5px solid black;
+background-color: rgb(167, 165, 165);
+min-width: 200px;
+padding: 3px 5px;
+align-self: center;
+margin: 0 12px;
+}
+.but5{
+    border:.5px solid black;
+ 
+min-width: 135px;
+padding: 3px 5px;
+align-self: center;
+ 
+}
+.but6{
+    border:.5px solid black;
+ 
+min-width: 117px;
+padding: 3px 5px;
+align-self: center;
+margin: 0 12px;
+}
+.but7{
+    border:.5px solid black;
+ 
+min-width: 110px;
+padding: 3px 5px;
+align-self: center;
+margin: 0 12px;
+}
+.but8{
+    border:.5px solid black;
+ 
+min-width: 140px;
+padding: 3px 5px;
+align-self: center;
+ }
+ .but9{
+    border:.5px solid black;
+ 
+min-width: 110px;
+padding: 3px 5px;
+align-self: center;
+margin-right:   10px;
+ }
+ .scrollbar::-webkit-scrollbar{
+    display: none;
+ }
+ .scrollbar{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+ }
+ @media(max-width:500){
+    .threedots{
+        font-size: 40px;
+    }
+ }

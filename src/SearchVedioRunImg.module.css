@@ -1,0 +1,16 @@
+.textsize a {
+    color: black;
+    font-size: 13px;
+}
+@media (max-width:800px) {
+    .textsize a {
+        color: black;
+        font-size: 9px;
+    }
+}
+@media (max-width:600px) {
+    .textsize a {
+        color: black;
+        font-size: px;
+    }
+}
