@@ -7,7 +7,7 @@ function SearchVedio({seavchval}) {
     //***  below use effect hook under kora kaj korala hoto
      async function seachh(){
   
-       let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${seavchval}&key=AIzaSyBLlZL-IEq1I8eDpxfFXg6sxLaJ64hCYa8`);
+       let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${seavchval}&key=AIzaSyBZn5AL6Kq1NVgHeyVGMrIKO7EOeL7kP50`);
        let data=await res.json();
     let {items}=data;
          setarr(items);

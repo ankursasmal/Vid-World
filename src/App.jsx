@@ -41,8 +41,8 @@ let [hidevedio,sethidevedio]=useState(false);
      <div className='w-full flex items-center  mt-4 justify-between' >
       <div className='flex items-center px-3'> 
 <VscThreeBars className='md:mx-5 mx-1  threedots'/>
-<img className='w-7 h-7' src="https://t3.ftcdn.net/jpg/04/74/05/94/360_F_474059464_qldYuzxaUWEwNTtYBJ44VN89ARuFktHW.jpg" alt="" />
-<h1 >YouTube</h1>
+<img className='w-7 h-7' src="https://www.freeiconspng.com/thumbs/video-icon/blue-video-play-icon-9.jpg" alt="" />
+<h1 className='font-bold text-blue-600' >Vid</h1>
 <div className='flex flex-col h-7'>
 <a className='text-[9px]'>IN</a>
 <a></a>
@@ -245,10 +245,8 @@ let [hidevedio,sethidevedio]=useState(false);
 </div>
  
 } 
-
-  
-{/* using img on click new page vedio run */}
-{/* <Frontimg/> */}
+ {/* using img on click new page vedio run */}
+{/* <FrontimgSearch/> */}
 {/* hole project a jakhana use korbo sakanai props pass kor ta hoba na hola a sasa vedio asbana
   so use usecontext hook  */}
    </div>

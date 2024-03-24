@@ -3,18 +3,18 @@ import VedioRunpage from './VedioRunpage';
 import style from './SearchVedioRunImg.module.css'
 import {Servalue} from './App'
 const SearchimgvedioRunID=createContext();
-
+const SearchUrl=createContext();
 function SearchVedioRun() {
    let context=useContext(Servalue);
 
-    let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyBVT5-sJgmeNByN7a8o7spPyxGU371keMQ&maxResults=5';
+    let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyCuQrip2LNCteALTv7_BLsrykbuawoIBMk&maxResults=5';
     let [arr,setarr]=useState([]);
     let [id4,setidpass]=useState('');
  
        //***  below use effect hook under kora kaj korala hoto
         async function seachh(){
      
-          let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${context}&key=AIzaSyBLlZL-IEq1I8eDpxfFXg6sxLaJ64hCYa8`);
+          let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${context}&key=AIzaSyBZn5AL6Kq1NVgHeyVGMrIKO7EOeL7kP50`);
           let data=await res.json();
        let {items}=data;
             setarr(items);
@@ -26,7 +26,8 @@ function SearchVedioRun() {
    },[context]);
 
   return (
-   <SearchimgvedioRunID.Provider value={id4}> 
+   <SearchimgvedioRunID.Provider value={id4}>
+      <SearchUrl.Provider value={arr}> 
     <div className={` ${style.textsize}   my-3   flex items-center justify-between flex-wrap`}>
        {/* ifream disply korar media  src="https://www.youtube.com/embed/as ->it is only add (vedioId)" */}
        {arr.map((e,i) => {
@@ -51,6 +52,7 @@ function SearchVedioRun() {
 {/* <VedioRunpage /> */}
 
 </div>
+</SearchUrl.Provider> 
 </SearchimgvedioRunID.Provider>
    )
 }

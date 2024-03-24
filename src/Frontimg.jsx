@@ -3,11 +3,11 @@ import style from './Frontimg.module.css'
 import VedioRunpage from './VedioRunpage';
 import { createContext } from 'react';
 const FrontimgID=createContext();
-
+const UrlvedioRundata=createContext();
 
  function Frontimg() {
-    let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyBLlZL-IEq1I8eDpxfFXg6sxLaJ64hCYa8&maxResults=2';
-    let [values,setval]=useState([]);
+    let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyBZn5AL6Kq1NVgHeyVGMrIKO7EOeL7kP50&maxResults=2';
+    let [arr2,setval]=useState([]);
 let [id,setidpass]=useState('');
    
     //***  below use effect hook under kora kaj korala hoto
@@ -15,19 +15,37 @@ function fun(){
     fetch(url).then(res=>res.json()).then(data=>{ 
      let {items}=data;
       setval(items);
-    console.log(values);
-  
-})
+ })
 }
 
 useEffect(()=>{
 fun();
 },[]);
+
+// useEffect(() => {
+//   const fetchData = async () => {
+//       try {
+//           const response = await fetch(url);
+//           if (!response.ok) {
+//               throw new Error('Failed to fetch data');
+//           }
+//           const data = await response.json();
+//           setval(data.items);
+//       } catch (error) {
+//           console.error('Error fetching data:', error);
+//       }
+//   };
+
+//   fetchData();
+// }, [url]);
+
+
   return (
     <FrontimgID.Provider value={id} > 
- <div className={` ${style.textsize}   my-3   flex items-center justify-between flex-wrap`}>
+<UrlvedioRundata.Provider value={arr2}> 
+ <div className={` ${style.textsize}   my-4   flex items-center justify-between flex-wrap`}>
        {/* ifream disply korar media  src="https://www.youtube.com/embed/as ->it is only add (vedioId)" */}
-       {values.map((e,i) => {
+       {arr2.map((e,i) => {
  
   return (
 
@@ -49,6 +67,7 @@ fun();
 {/* importent for pass id */}
  <VedioRunpage />
     </div>
+    </UrlvedioRundata.Provider>
     </FrontimgID.Provider>
   )
 }
@@ -56,3 +75,4 @@ fun();
 
 export default Frontimg
 export {FrontimgID}
+export {UrlvedioRundata}

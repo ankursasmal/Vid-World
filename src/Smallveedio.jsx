@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 function Smallveedio() {
-    let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyBLlZL-IEq1I8eDpxfFXg6sxLaJ64hCYa8&maxResults=2';
+    let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyBZn5AL6Kq1NVgHeyVGMrIKO7EOeL7kP50&maxResults=2';
     let [values,setval]=useState([]);
 
    

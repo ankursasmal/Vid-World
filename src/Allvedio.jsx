@@ -10,7 +10,7 @@ import { RxCross1 } from "react-icons/rx";
 //***1. channel id wise all vedio only channelId alada channel wise hoba 
 const url1='https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyBVT5-sJgmeNByN7a8o7spPyxGU371keMQ&channelId=UCwfaAHy4zQUb2APNOGXUCCA&part=snippet,id&order=date&maxResults=3' ;
 //***2.  most popular vedio link below only key is my from-> console.google.com
-    let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyBVT5-sJgmeNByN7a8o7spPyxGU371keMQ&maxResults=1';
+    let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyBZn5AL6Kq1NVgHeyVGMrIKO7EOeL7kP50&maxResults=1';
   
 function Allvedio() {
   let [values,setval]=useState([]);
