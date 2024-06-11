@@ -1,4 +1,5 @@
  import React, { createContext, useEffect, useState } from 'react'
+ import { Link,Outlet,NavLink } from 'react-router-dom';
  import { VscThreeBars } from "react-icons/vsc";
   import { FaSearch } from "react-icons/fa";
  import { HiMicrophone } from "react-icons/hi2";
@@ -20,15 +21,14 @@ import { IoIosArrowDown } from "react-icons/io";
 import Smallveedio from './Smallveedio';
 import { BiBookHeart } from "react-icons/bi";
 
-// serch vedio
+// outlet place components dydefault import bellow  
 import SearchVedio from './SearchVedio';
 import Frontimg from './Frontimg';
 import VedioRunpage from './VedioRunpage';
 import FrontimgSearch from './FrontimgSearch';
-import SearchVedioRunImg from './SearchVedioRunImg';
-import VedioRunGrid2 from './VedioRunGrid2';
-import AllimgVedioRun from './AllimgVedioRun';
-// for use context
+// import SearchVedioRunImg from './ClickVedioSearchImg';
+//  import VedioRunGrid2 from './VedioRunClick';
+ // for use context
 const Servalue=createContext();
 
  function App() {
@@ -48,20 +48,20 @@ let [hidevedio,sethidevedio]=useState(false);
 <a></a>
 </div>
 </div>
-<div className='flex items-center w-[50%]'> 
-<div className='w-[85%] flex items-center rounded-full border-solid border-black border-[.5px] '>
-  <input type="search" name="" id=""  placeholder='search' className='border-solid border-black border-[1px] py-2 rounded-l-full w-[90%] py-[6px] pl-4' value={inputval} onChange={(e)=>{
+<div className='flex items-center w-[50%] inputarea'> 
+<div className='w-[85%]  flex items-center rounded-full border-solid border-black border-[.5px] '>
+  <input type="search" name="" id=""  placeholder='search' className='border-solid border-black border-[1px] py-2 rounded-l-full w-[90%] py-[6px] pl-4  ' value={inputval} onChange={(e)=>{
     e.preventDefault();
     setinputval(e.target.value);
-
   }}/>
   <FaSearch className=' text-12xl  w-[15%]' onClick={(e)=>{
     e.preventDefault();
     setsearchval(inputval);
+
      
   }}  />
 </div>
-<HiMicrophone  className='mx-4'/>
+<HiMicrophone  className=' mx-2 md:mx-4 text-[17px] md:text-1xl'/>
 
 </div>
 <div className='flex items-center mr-4 '>
@@ -78,7 +78,7 @@ let [hidevedio,sethidevedio]=useState(false);
 
   {/* grrid 1  */}
 <div className='col-span-1 lg:col-span-2 mx-[1px] lg:mx-2 '>
-  <div className='flex flex-col'> 
+  <div className='flex flex-col overflow-y-auto  '> 
   <div className=' lg:hidden block '> 
 <div className='flex flex-col items-center  '>
    <div className='flex items-center flex-col p-1 hover:border-[.05px] rounded-lg hover:bg-gray-300 mx-2  py-[6px]'>
@@ -106,11 +106,11 @@ let [hidevedio,sethidevedio]=useState(false);
   <div className=' lg:block hidden'> 
    <div className='flex flex-col   '>
 
-  <div className='flex items-center hover:border-[.05px] rounded-lg hover:bg-gray-300 mx-2  py-[6px]'>
+   <Link to='/'> <div className='flex items-center hover:border-[.05px] rounded-lg hover:bg-gray-300 mx-2  py-[6px]'>
   <IoMdHome  className='pl-2 mr-3'/>
 <a>Home</a>
  <a></a>
-  </div>
+  </div></Link>
   <div className='flex items-center hover:border-[.05px] rounded-lg hover:bg-gray-300  mx-2 py-[6px]'>
   <SiYoutubeshorts className=' pl-2 mr-3'/>
 <a>Shorts</a>
@@ -159,9 +159,9 @@ let [hidevedio,sethidevedio]=useState(false);
  </div>
 
 {/* grid 2 */}
-<div className='col-span-10 lg:col-span-9 w-[90vw] md:w-[90vw] lg:w-[82vw]'>
- <div className='flex items-center  overflow-x-scroll scrollbar'>
-  <a className='but1 rounded-lg  bg-gray-400   hover:text-white hover:bg-black'>All</a>
+<div className='col-span-10 lg:col-span-9 w-[90vw] md:w-[90vw] lg:w-[82vw] overflow-y-auto h-[92vh]'>
+ <div className='flex items-center overflow-x-auto scrollbar '>
+ <Link to='/'>  <a className='but1 rounded-lg  bg-gray-400   hover:text-white hover:bg-black'>All</a></Link>
   <a className='but3 rounded-lg bg-gray-400 hover:text-white hover:bg-black'>Music</a>
   <a className='but4 rounded-lg  bg-gray-400 hover:text-white hover:bg-black'> Computer Programmming</a>
   <a className='but5 rounded-lg bg-gray-400 hover:text-white hover:bg-black'>Bollywood Music</a>
@@ -179,77 +179,9 @@ let [hidevedio,sethidevedio]=useState(false);
   <button className='p-1 mx-3 rounded-lg bg-gray-400 hover:text-white hover:bg-black'>Watched</button>
   <a className='but9 rounded-lg bg-gray-400 hover:text-white hover:bg-black'>New For You</a>
 </div>
-
-
-
-{/* for serch vedios direct vedio */}
-{/* <SearchVedio seavchval={seavchval} /> */}
-
-
-
-{/* for alll small vedio direct vedio */}
-{/* <Smallveedio/> */}
-
-{/* a page thaka props o pass holo display hoba na mainpaga */}
-
-  {/* <div className='block hidden'> 
-<VedioRunpage seavchval={seavchval} />
-</div>   */}
-{/*
-  <div className='block hidden'> 
-<SearchVedioRunImg seavchval={seavchval}/>
-</div>   */}
-   
-
- {/*  1.  insteed of vedio i want to display image of vedio secarch or all */}
-{/* {seavchval===''?
-<div> <div style={{display:'none' }}> 
-<SearchVedio seavchval={seavchval} />
-</div>
-<div style={{display:'block',visibility:'visible'}}>
-     <Smallveedio/>
-     
+{/* outlet position dynamicaly change */}
+<Outlet className='overflow-x-scroll h-[90vh]'/>
      </div>
-</div>
-  :<div>
-  <div style={{display:'none',visibility:'hidden'}}> 
-      <Smallveedio/>
- </div>
- <div style={{display:'block',visibility:'visible'}}>
-
- <SearchVedio seavchval={seavchval} />
- </div>
-</div>
- 
-} */}
-
-
-{/* 2. only image show on click redirect on new page main for project*/}
-{seavchval===''?
-<div> <div style={{display:'none' }}> 
-<FrontimgSearch seavchval={seavchval} />
-</div>
-<div style={{display:'block',visibility:'visible'}}>
-     <Frontimg/>
-     
-     </div>
-</div>
-  :<div>
-  <div style={{display:'none',visibility:'hidden'}}> 
-      <Frontimg/>
- </div>
- <div style={{display:'block',visibility:'visible'}}>
-
- <FrontimgSearch seavchval={seavchval} />
- </div>
-</div>
- 
-} 
- {/* using img on click new page vedio run */}
-{/* <FrontimgSearch/> */}
-{/* hole project a jakhana use korbo sakanai props pass kor ta hoba na hola a sasa vedio asbana
-  so use usecontext hook  */}
-   </div>
 
 
 </div>

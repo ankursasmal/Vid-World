@@ -4,8 +4,7 @@
 
  import {FrontimgSearchID} from './FrontimgSearch';
 import {FrontimgID} from './Frontimg';
- import { AllimgrunID } from './AllimgVedioRun';
-import {SearchUrl} from './FrontimgSearch'
+ import {SearchUrl} from './FrontimgSearch'
 import {UrlvedioRundata} from './Frontimg'
 
 // import {SearchimgvedioRunID} from './SearchVedioRunImg'
@@ -17,8 +16,9 @@ import {UrlvedioRundata} from './Frontimg'
     let frontimgsearchID=useContext(FrontimgSearchID);
     let Frontimgid=useContext(FrontimgID);
      let seachdata=useContext(SearchUrl);
-    let AllvedioRundata=useContext(UrlvedioRundata);
-  
+    const AllvedioRundata=useContext(UrlvedioRundata);
+
+  console.log(frontimgsearchID,typeof(AllvedioRundata));
      // let SearchimgvediorunID=useContext(SearchimgvedioRunID);
      
    return (
@@ -26,15 +26,14 @@ import {UrlvedioRundata} from './Frontimg'
      <div className='grid grid-cols-12 gap-1 my-2'>
      {/* ifream disply korar media  src="https://www.youtube.com/embed/as ->it is only add (vedioId)" */}
       {/* grid 1 */}
-      <div className='col-span-8 '>
+       <div className='col-span-8 '>
      <iframe  className='w-[50vw] h-[30vw] mr-4 object-cover' src={`https://www.youtube.com/embed/${frontimgsearchID||Frontimgid||IdSearchvedioimg||Idvedioimg}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay encrypted-media; gyroscope; picture-in-picture; web-share " allowfullscreen ></iframe>   
   </div>  
- 
-  
+   
 
     {/* /grid 2 */}
-    <div className='col-span-4'> 
-    <div>
+           <div className='col-span-4'> 
+           <div>
        {inputdata===''?
        <div>
         <div>
@@ -156,8 +155,9 @@ return (
   </div> 
 } 
 </div>
+
    </div>
-   </div>
+    </div>
   )
 }
 

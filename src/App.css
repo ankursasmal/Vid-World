@@ -74,8 +74,15 @@ margin-right:   10px;
     -ms-overflow-style: none;
     scrollbar-width: none;
  }
- @media(max-width:500){
+ @media(max-width:500px){
     .threedots{
         font-size: 40px;
+    }
+} 
+@media(max-width:370px){
+  
+    .inputarea{
+        font-size:5px ;
+
     }
  }
